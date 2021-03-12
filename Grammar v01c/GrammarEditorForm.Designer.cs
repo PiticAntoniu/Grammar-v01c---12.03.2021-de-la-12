@@ -108,7 +108,7 @@
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(83, 298);
+            this.OKButton.Location = new System.Drawing.Point(85, 298);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(75, 23);
             this.OKButton.TabIndex = 8;
