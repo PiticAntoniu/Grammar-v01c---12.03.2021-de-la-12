@@ -18,9 +18,16 @@ namespace Grammar_v01c
             InitializeComponent();
         }
 
+        public GrammarEditorForm(Grammar g)
+        {
+            this.g = g;
+            InitializeComponent();
+        }
+
         private void GrammarEditorForm_Load(object sender, EventArgs e)
         {
-            g.LoadFromFile(Properties.Resources.DefaultGrammarLocation);
+            //g.LoadFromFile(Properties.Resources.DefaultGrammarLocation);
+            
             startSymbolTextBox.Text = g.StartSymbol.ToString();
             terminalsTextBox.Text = Helper.CharListToString(g.Terminals);
             nonterminalsTextBox.Text = Helper.CharListToString(g.Nonterminals);

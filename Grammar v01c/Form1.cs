@@ -38,7 +38,7 @@ namespace Grammar_v01c
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            var t = new GrammarEditorForm();
+            var t = new GrammarEditorForm(g);
             t.ShowDialog();
         }
     }
