@@ -124,7 +124,7 @@
     <value>c:\\temp\\defaultGrammar.json</value>
   </data>
   <data name="NonTerminalsColor" xml:space="preserve">
-    <value>Red</value>
+    <value>Magenta</value>
   </data>
   <data name="TerminalsColor" xml:space="preserve">
     <value>Blue</value>
