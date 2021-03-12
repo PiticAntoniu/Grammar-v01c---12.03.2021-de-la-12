@@ -36,6 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.productionsDataGridView = new System.Windows.Forms.DataGridView();
+            this.OKButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productionsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,11 +106,31 @@
             this.productionsDataGridView.Size = new System.Drawing.Size(240, 150);
             this.productionsDataGridView.TabIndex = 7;
             // 
+            // OKButton
+            // 
+            this.OKButton.Location = new System.Drawing.Point(83, 298);
+            this.OKButton.Name = "OKButton";
+            this.OKButton.Size = new System.Drawing.Size(75, 23);
+            this.OKButton.TabIndex = 8;
+            this.OKButton.Text = "OK";
+            this.OKButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(199, 298);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 9;
+            this.cancelButton.Text = "cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
             // GrammarEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 316);
+            this.ClientSize = new System.Drawing.Size(409, 353);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.OKButton);
             this.Controls.Add(this.productionsDataGridView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nonterminalsTextBox);
@@ -119,6 +141,7 @@
             this.Controls.Add(this.label1);
             this.Name = "GrammarEditorForm";
             this.Text = "GrammarEditorForm";
+            this.Load += new System.EventHandler(this.GrammarEditorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productionsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,5 +158,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView productionsDataGridView;
+        private System.Windows.Forms.Button OKButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
