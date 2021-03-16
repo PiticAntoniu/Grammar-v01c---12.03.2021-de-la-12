@@ -34,5 +34,19 @@ namespace Grammar_v01c
 
             productionsDataGridView.DataSource = g.ProductionList;
         }
+
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            g.Terminals = Helper.LowerLetters(terminalsTextBox.Text);
+            g.Nonterminals = Helper.UpperLetters(nonterminalsTextBox.Text);
+            g.StartSymbol = startSymbolTextBox.Text[0];
+            g.SaveToJson(Properties.Resources.DefaultGrammarLocation);
+            Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
