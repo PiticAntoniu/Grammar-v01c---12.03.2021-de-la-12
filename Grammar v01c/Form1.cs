@@ -49,5 +49,11 @@ namespace Grammar_v01c
             GrammarProvider.GetGrammar().LoadFromFile(Properties.Resources.DefaultGrammarLocation);
             grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
         }
+
+        private void noLambdaProductionsButton_Click(object sender, EventArgs e)
+        {
+            GrammarProvider.GetGrammar().EliminateLambdaProductions();
+            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
+        }
     }
 }

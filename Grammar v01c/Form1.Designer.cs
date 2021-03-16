@@ -34,12 +34,13 @@
             this.loadButton = new System.Windows.Forms.Button();
             this.grammarInfoWebBrowser = new System.Windows.Forms.WebBrowser();
             this.editButton = new System.Windows.Forms.Button();
+            this.noLambdaProductionsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // parseButton
             // 
             this.parseButton.Location = new System.Drawing.Point(510, 81);
-            this.parseButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.parseButton.Margin = new System.Windows.Forms.Padding(6);
             this.parseButton.Name = "parseButton";
             this.parseButton.Size = new System.Drawing.Size(150, 44);
             this.parseButton.TabIndex = 0;
@@ -50,7 +51,7 @@
             // inputTextBox
             // 
             this.inputTextBox.Location = new System.Drawing.Point(86, 81);
-            this.inputTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.inputTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.Size = new System.Drawing.Size(378, 31);
             this.inputTextBox.TabIndex = 1;
@@ -59,7 +60,7 @@
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(488, 475);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(134, 54);
             this.saveButton.TabIndex = 3;
@@ -70,7 +71,7 @@
             // loadButton
             // 
             this.loadButton.Location = new System.Drawing.Point(676, 475);
-            this.loadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(4);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(134, 54);
             this.loadButton.TabIndex = 4;
@@ -81,7 +82,7 @@
             // grammarInfoWebBrowser
             // 
             this.grammarInfoWebBrowser.Location = new System.Drawing.Point(86, 137);
-            this.grammarInfoWebBrowser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grammarInfoWebBrowser.Margin = new System.Windows.Forms.Padding(6);
             this.grammarInfoWebBrowser.MinimumSize = new System.Drawing.Size(40, 38);
             this.grammarInfoWebBrowser.Name = "grammarInfoWebBrowser";
             this.grammarInfoWebBrowser.Size = new System.Drawing.Size(734, 329);
@@ -90,7 +91,7 @@
             // editButton
             // 
             this.editButton.Location = new System.Drawing.Point(86, 479);
-            this.editButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.editButton.Margin = new System.Windows.Forms.Padding(6);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(150, 44);
             this.editButton.TabIndex = 6;
@@ -98,18 +99,29 @@
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
+            // noLambdaProductionsButton
+            // 
+            this.noLambdaProductionsButton.Location = new System.Drawing.Point(265, 475);
+            this.noLambdaProductionsButton.Name = "noLambdaProductionsButton";
+            this.noLambdaProductionsButton.Size = new System.Drawing.Size(132, 63);
+            this.noLambdaProductionsButton.TabIndex = 7;
+            this.noLambdaProductionsButton.Text = "No Lambda prod";
+            this.noLambdaProductionsButton.UseVisualStyleBackColor = true;
+            this.noLambdaProductionsButton.Click += new System.EventHandler(this.noLambdaProductionsButton_Click);
+            // 
             // grammarInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 550);
+            this.Controls.Add(this.noLambdaProductionsButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.grammarInfoWebBrowser);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.inputTextBox);
             this.Controls.Add(this.parseButton);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "grammarInfoForm";
             this.Text = "Grammar Info";
             this.Load += new System.EventHandler(this.grammarInfoForm_Load);
@@ -126,6 +138,7 @@
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.WebBrowser grammarInfoWebBrowser;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button noLambdaProductionsButton;
     }
 }
 

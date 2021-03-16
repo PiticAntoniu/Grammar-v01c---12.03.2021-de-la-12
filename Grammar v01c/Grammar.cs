@@ -77,6 +77,22 @@ start symbol {StartSymbol} <br>
 set of production rules P = {FormatAsSet(ProductionList)}<br>";
         }
 
+        internal void EliminateLambdaProductions()
+        {
+            Grammar g = new Grammar();
+
+            // Determinam neterminalele care pot ajunge cumva in lambda
+            // List <char> lambdaNonterminals (Ne)
+
+            // schimbam S daca avea S apartine lambdaNonterminals
+
+            // pentru fiecare productie P
+            // Expandam P in toate variantele sale
+            // prin inlocuirea neterminalelor din lambdaNonterminals
+            // cu el insusi sau cu nimic
+
+        }
+
         internal string GrammarInfoAsHTML()
         {
             StringBuilder t = new StringBuilder();
