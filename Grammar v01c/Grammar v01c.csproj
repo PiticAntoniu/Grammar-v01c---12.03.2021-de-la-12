@@ -62,6 +62,7 @@
     <Compile Include="GrammarEditorForm.Designer.cs">
       <DependentUpon>GrammarEditorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GrammarProvider.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Production.cs" />
     <Compile Include="Program.cs" />

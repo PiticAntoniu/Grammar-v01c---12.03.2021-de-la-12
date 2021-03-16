@@ -12,35 +12,30 @@ namespace Grammar_v01c
 {
     public partial class GrammarEditorForm : Form
     {
-        Grammar g = new Grammar();
-        public GrammarEditorForm()
+              public GrammarEditorForm()
         {
             InitializeComponent();
         }
 
-        public GrammarEditorForm(Grammar g)
-        {
-            this.g = g;
-            InitializeComponent();
-        }
 
         private void GrammarEditorForm_Load(object sender, EventArgs e)
         {
             //g.LoadFromFile(Properties.Resources.DefaultGrammarLocation);
             
-            startSymbolTextBox.Text = g.StartSymbol.ToString();
-            terminalsTextBox.Text = Helper.CharListToString(g.Terminals);
-            nonterminalsTextBox.Text = Helper.CharListToString(g.Nonterminals);
 
-            productionsDataGridView.DataSource = g.ProductionList;
+            startSymbolTextBox.Text = GrammarProvider.GetGrammar().StartSymbol.ToString();
+            terminalsTextBox.Text = Helper.CharListToString(GrammarProvider.GetGrammar().Terminals);
+            nonterminalsTextBox.Text = Helper.CharListToString(GrammarProvider.GetGrammar().Nonterminals);
+
+            productionsDataGridView.DataSource = GrammarProvider.GetGrammar().ProductionList;
         }
 
         private void OKButton_Click(object sender, EventArgs e)
         {
-            g.Terminals = Helper.LowerLetters(terminalsTextBox.Text);
-            g.Nonterminals = Helper.UpperLetters(nonterminalsTextBox.Text);
-            g.StartSymbol = startSymbolTextBox.Text[0];
-            g.SaveToJson(Properties.Resources.DefaultGrammarLocation);
+            GrammarProvider.GetGrammar().Terminals = Helper.LowerLetters(terminalsTextBox.Text);
+            GrammarProvider.GetGrammar().Nonterminals = Helper.UpperLetters(nonterminalsTextBox.Text);
+            GrammarProvider.GetGrammar().StartSymbol = startSymbolTextBox.Text[0];
+            //GrammarProvider.GetGrammar().SaveToJson(Properties.Resources.DefaultGrammarLocation);
             Close();
         }
 
