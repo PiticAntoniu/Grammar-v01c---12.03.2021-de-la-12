@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Grammar_v01c
@@ -81,8 +82,8 @@ set of production rules P = {FormatAsSet(ProductionList)}<br>";
         {
             Grammar g = new Grammar();
 
-            // Determinam neterminalele care pot ajunge cumva in lambda
-            // List <char> lambdaNonterminals (Ne)
+            List<char> lambdaNonterminals = new List<char>();
+            lambdaNonterminals = GetLambdaNonterminals();
 
             // schimbam S daca avea S apartine lambdaNonterminals
 
@@ -91,6 +92,35 @@ set of production rules P = {FormatAsSet(ProductionList)}<br>";
             // prin inlocuirea neterminalelor din lambdaNonterminals
             // cu el insusi sau cu nimic
 
+        }
+
+        private List<char> GetLambdaNonterminals()
+        {
+            List<char> [] N = new List<char>[100];
+
+            int i = 0;
+            N[i] = new List<char>();
+            foreach(var p in productionList)
+            {
+                if (p.Right.Equals("@"))
+                {
+                    N[i].Add(p.Left);
+                }
+            }
+
+            do
+            {
+                i++;
+                N[i] = new List<char>(N[i - 1]);
+                foreach (var p in productionList)
+                {
+                    if (Helper.StringContainsOnlyCharsFromList(p.Right,N[i-1])){
+                        N[i].Add(p.Left);
+                    }
+                }
+            }
+            while (N[i].Intersect(N[i-1]).Count() != N[i].Count()) ; /// !!! TODO
+            return N[i];
         }
 
         internal string GrammarInfoAsHTML()
@@ -122,6 +152,8 @@ set of production rules P = {FormatAsSet(ProductionList)}<br>";
         {
             // "SaA$Sb$Aaa&" => S->aA  S->b  A->aa
             // OriginalInput => ProductionList
+
+            ProductionList.Clear();
 
             foreach (var production in OriginalInput.Split('$', '&'))
             {
