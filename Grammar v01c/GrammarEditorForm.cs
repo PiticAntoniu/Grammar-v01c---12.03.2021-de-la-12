@@ -32,7 +32,7 @@ namespace Grammar_v01c
 
         private void OKButton_Click(object sender, EventArgs e)
         {
-            GrammarProvider.GetGrammar().Terminals = Helper.LowerLetters(terminalsTextBox.Text);
+            GrammarProvider.GetGrammar().Terminals = Helper.LowerAndSymbolsLetters(terminalsTextBox.Text);
             GrammarProvider.GetGrammar().Nonterminals = Helper.UpperLetters(nonterminalsTextBox.Text);
             GrammarProvider.GetGrammar().StartSymbol = startSymbolTextBox.Text[0];
             //GrammarProvider.GetGrammar().SaveToJson(Properties.Resources.DefaultGrammarLocation);

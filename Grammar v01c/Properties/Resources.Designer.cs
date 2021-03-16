@@ -95,5 +95,14 @@ namespace Grammar_v01c.Properties {
                 return ResourceManager.GetString("TerminalsColor", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @+=*/().
+        /// </summary>
+        internal static string terminalSymbols {
+            get {
+                return ResourceManager.GetString("terminalSymbols", resourceCulture);
+            }
+        }
     }
 }

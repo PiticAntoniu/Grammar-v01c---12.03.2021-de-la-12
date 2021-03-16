@@ -129,4 +129,7 @@
   <data name="TerminalsColor" xml:space="preserve">
     <value>Blue</value>
   </data>
+  <data name="terminalSymbols" xml:space="preserve">
+    <value>@+=*/()</value>
+  </data>
 </root>

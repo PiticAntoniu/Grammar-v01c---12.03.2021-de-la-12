@@ -43,5 +43,11 @@ namespace Grammar_v01c
             //GrammarProvider.GetGrammar().LoadFromFile(Properties.Resources.DefaultGrammarLocation);
             grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
         }
+
+        private void grammarInfoForm_Load(object sender, EventArgs e)
+        {
+            GrammarProvider.GetGrammar().LoadFromFile(Properties.Resources.DefaultGrammarLocation);
+            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
+        }
     }
 }

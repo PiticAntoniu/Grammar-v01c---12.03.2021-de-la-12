@@ -46,7 +46,7 @@ namespace Grammar_v01c
             StartSymbol = OriginalInput[0];
 
             nonterminals = Helper.UpperLetters(OriginalInput);
-            terminals = Helper.LowerLetters(OriginalInput);
+            terminals = Helper.LowerAndSymbolsLetters(OriginalInput);
 
             SetProductions();
         }
@@ -64,7 +64,7 @@ namespace Grammar_v01c
             StartSymbol = OriginalInput[0];
 
             nonterminals = Helper.UpperLetters(OriginalInput);
-            terminals = Helper.LowerLetters(OriginalInput);
+            terminals = Helper.LowerAndSymbolsLetters(OriginalInput);
 
             SetProductions();
         }

@@ -22,13 +22,13 @@ namespace Grammar_v01c
             return result.ToList();
         }
 
-        internal static List<char> LowerLetters(string input)
+        internal static List<char> LowerAndSymbolsLetters(string input)
         {
             HashSet<char> result = new HashSet<char>();
-
+            
             foreach (char c in input)
             {
-                if (char.IsLower(c))
+                if (char.IsLower(c) || Properties.Resources.terminalSymbols.Contains(c))
                     result.Add(c);
             }
 
